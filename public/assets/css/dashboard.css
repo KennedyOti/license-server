@@ -246,10 +246,10 @@ body {
 /* Dashboard Cards */
 .dashboard-card {
     background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-    padding: 1.75rem;
-    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+    margin-bottom: 2rem;
     transition: all 0.3s ease;
     border-left: 4px solid var(--primary-red);
     height: 100%;
@@ -262,37 +262,37 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: radial-gradient(circle, rgba(211, 47, 47, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     transform: translate(30%, -30%);
 }
 
 .dashboard-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
     background: linear-gradient(135deg, var(--primary-red), var(--light-red));
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
 }
 
 .card-icon i {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     color: var(--white);
 }
 
 .stat-number {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #212121;
@@ -300,8 +300,39 @@ body {
 
 .stat-label {
     color: #666;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
+}
+
+/* Specific card colors */
+.companies-card .card-icon {
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    box-shadow: 0 3px 8px rgba(25, 118, 210, 0.3);
+}
+
+.users-card .card-icon {
+    background: linear-gradient(135deg, #388e3c, #66bb6a);
+    box-shadow: 0 3px 8px rgba(56, 142, 60, 0.3);
+}
+
+.products-card .card-icon {
+    background: linear-gradient(135deg, #7b1fa2, #ab47bc);
+    box-shadow: 0 3px 8px rgba(123, 31, 162, 0.3);
+}
+
+.licenses-card .card-icon {
+    background: linear-gradient(135deg, #f57c00, #ffb74d);
+    box-shadow: 0 3px 8px rgba(245, 124, 0, 0.3);
+}
+
+.active-licenses-card .card-icon {
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
+    box-shadow: 0 3px 8px rgba(46, 125, 50, 0.3);
+}
+
+.api-status-card .card-icon {
+    background: linear-gradient(135deg, #00695c, #26a69a);
+    box-shadow: 0 3px 8px rgba(0, 105, 92, 0.3);
 }
 
 .stat-trend {
@@ -322,9 +353,10 @@ body {
 /* Table Styles */
 .table-container {
     background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-    padding: 1.75rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     overflow: hidden;
     border-left: 4px solid var(--primary-red);

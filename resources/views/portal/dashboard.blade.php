@@ -5,9 +5,30 @@
 @section('content')
 <!-- Dashboard Stats -->
 <div class="row">
+    @if($role === 'owner')
+    <div class="col-md-3 col-sm-6">
+        <div class="dashboard-card companies-card">
+            <div class="card-icon">
+                <i class="bi bi-building"></i>
+            </div>
+            <div class="stat-number">{{ $total_companies ?? 0 }}</div>
+            <div class="stat-label">Total Companies</div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="dashboard-card users-card">
+            <div class="card-icon">
+                <i class="bi bi-people"></i>
+            </div>
+            <div class="stat-number">{{ $total_users ?? 0 }}</div>
+            <div class="stat-label">Total Users</div>
+        </div>
+    </div>
+    @endif
+
     @if(in_array($role, ['admin', 'owner']))
     <div class="col-md-3 col-sm-6">
-        <div class="dashboard-card">
+        <div class="dashboard-card products-card">
             <div class="card-icon">
                 <i class="bi bi-box-seam"></i>
             </div>
@@ -18,7 +39,7 @@
     @endif
 
     <div class="col-md-3 col-sm-6">
-        <div class="dashboard-card">
+        <div class="dashboard-card licenses-card">
             <div class="card-icon">
                 <i class="bi bi-key"></i>
             </div>
@@ -28,7 +49,7 @@
     </div>
 
     <div class="col-md-3 col-sm-6">
-        <div class="dashboard-card">
+        <div class="dashboard-card active-licenses-card">
             <div class="card-icon">
                 <i class="bi bi-check-circle"></i>
             </div>
@@ -39,7 +60,7 @@
 
     @if($role === 'owner' && $company)
     <div class="col-md-3 col-sm-6">
-        <div class="dashboard-card">
+        <div class="dashboard-card api-status-card">
             <div class="card-icon">
                 <i class="bi bi-shield-check"></i>
             </div>
@@ -92,32 +113,4 @@
 </div>
 @endif
 
-<!-- Recent Activity and System Status -->
-<div class="row">
-    <div class="col-lg-8">
-        <div class="table-container">
-            <h3 class="table-title">
-                <i class="bi bi-clock-history"></i>
-                Recent Activity
-            </h3>
-            <div class="text-center py-4">
-                <i class="bi bi-clock-history text-muted" style="font-size: 3rem;"></i>
-                <p class="text-muted mt-2">No recent activity to display</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4">
-        <div class="table-container">
-            <h3 class="table-title">
-                <i class="bi bi-graph-up"></i>
-                System Status
-            </h3>
-            <div class="text-center py-4">
-                <i class="bi bi-graph-up text-muted" style="font-size: 3rem;"></i>
-                <p class="text-muted mt-2">System status information will be displayed here</p>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

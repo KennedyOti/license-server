@@ -139,11 +139,7 @@
             </div>
 
             <div class="user-menu">
-                <div class="notifications">
-                    <i class="bi bi-bell"></i>
-                    <span class="notification-badge">3</span>
-                </div>
-                <div class="user-avatar">{{ substr(Auth::user()->name, 0, 2) }}</div>
+                <div class="user-avatar" data-bs-toggle="modal" data-bs-target="#profileModal" style="cursor: pointer;">{{ substr(Auth::user()->name, 0, 2) }}</div>
             </div>
         </div>
 
@@ -189,5 +185,73 @@
             });
         }
     </script>
+
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Profile Settings</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{{ route('profile.update', Auth::user()->id) }}" class="space-y-4">
+                        @csrf
+                        @method('patch')
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name', Auth::user()->name) }}" required autofocus autocomplete="name">
+                            @error('name')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email', Auth::user()->email) }}" required autocomplete="username">
+                            @error('email')
+                                <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
+
+                            @if (Auth::user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! Auth::user()->hasVerifiedEmail())
+                                <div class="mt-2">
+                                    <p class="text-sm text-muted">
+                                        Your email address is unverified.
+                                        <button form="send-verification" class="btn btn-link p-0 text-decoration-none">Click here to re-send the verification email.</button>
+                                    </p>
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="button" class="btn btn-danger" onclick="document.getElementById('logout-form-modal').submit();">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </button>
+                        </div>
+
+                        @if (session('status') === 'profile-updated')
+                            <div class="alert alert-success mt-3">
+                                Profile updated successfully.
+                            </div>
+                        @endif
+                    </form>
+
+                    <div class="mt-3">
+                        <a href="{{ route('profile.edit', Auth::user()->id) }}" class="btn btn-link">Edit Full Profile</a>
+                    </div>
+
+                    <form id="send-verification" method="post" action="{{ route('verification.send') }}" style="display: none;">
+                        @csrf
+                    </form>
+
+                    <form id="logout-form-modal" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
