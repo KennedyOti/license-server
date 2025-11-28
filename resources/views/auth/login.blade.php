@@ -40,7 +40,6 @@
                 <div class="input-group-custom">
                     <label for="email" class="form-label">Email Address</label>
                     <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Enter your email address" />
-                    <i class="bi bi-envelope input-icon"></i>
                     @error('email')
                         <div class="text-danger mt-1 small">
                             <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}
@@ -52,7 +51,6 @@
                 <div class="input-group-custom">
                     <label for="password" class="form-label">Password</label>
                     <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" placeholder="Enter your password" />
-                    <i class="bi bi-lock input-icon"></i>
                     @error('password')
                         <div class="text-danger mt-1 small">
                             <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}

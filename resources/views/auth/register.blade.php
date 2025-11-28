@@ -43,7 +43,6 @@
                     <div class="input-group-custom">
                         <label for="name" class="form-label">Full Name</label>
                         <input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Enter your full name" />
-                        <i class="bi bi-person input-icon"></i>
                         @error('name')
                             <div class="text-danger mt-1 small">
                                 <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}
@@ -54,7 +53,6 @@
                     <div class="input-group-custom">
                         <label for="email" class="form-label">Personal Email</label>
                         <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="Enter your personal email" />
-                        <i class="bi bi-envelope input-icon"></i>
                         @error('email')
                             <div class="text-danger mt-1 small">
                                 <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}
@@ -70,7 +68,6 @@
                     <div class="input-group-custom">
                         <label for="company_name" class="form-label">Company Name</label>
                         <input id="company_name" class="form-control" type="text" name="company_name" :value="old('company_name')" required autocomplete="organization" placeholder="Enter company name" />
-                        <i class="bi bi-building input-icon"></i>
                         @error('company_name')
                             <div class="text-danger mt-1 small">
                                 <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}
@@ -81,7 +78,6 @@
                     <div class="input-group-custom">
                         <label for="company_email" class="form-label">Company Email</label>
                         <input id="company_email" class="form-control" type="email" name="company_email" :value="old('company_email')" required autocomplete="email" placeholder="Enter company email" />
-                        <i class="bi bi-envelope-at input-icon"></i>
                         @error('company_email')
                             <div class="text-danger mt-1 small">
                                 <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}
@@ -101,7 +97,6 @@
                             <option value="Manufacturing" {{ old('industry') == 'Manufacturing' ? 'selected' : '' }}>Manufacturing</option>
                             <option value="Other" {{ old('industry') == 'Other' ? 'selected' : '' }}>Other</option>
                         </select>
-                        <i class="bi bi-briefcase input-icon"></i>
                         @error('industry')
                             <div class="text-danger mt-1 small">
                                 <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}
@@ -117,7 +112,6 @@
                     <div class="input-group-custom">
                         <label for="password" class="form-label">Password</label>
                         <input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" placeholder="Create a strong password" />
-                        <i class="bi bi-lock input-icon"></i>
                         <div class="password-strength" id="password-strength" style="display: none;">
                             <div class="strength-meter">
                                 <div class="strength-fill" id="strength-fill"></div>
@@ -134,7 +128,6 @@
                     <div class="input-group-custom">
                         <label for="password_confirmation" class="form-label">Confirm Password</label>
                         <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm your password" />
-                        <i class="bi bi-lock-fill input-icon"></i>
                         @error('password_confirmation')
                             <div class="text-danger mt-1 small">
                                 <i class="bi bi-exclamation-circle me-1"></i>{{ $message }}

@@ -234,16 +234,19 @@ footer {
     margin-bottom: 1rem;
 }
 
-.input-group-custom .form-control {
+.input-group-custom .form-control,
+.input-group-custom .form-select {
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     padding: 0.5rem 0.875rem;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.8);
+    position: relative;
 }
 
-.input-group-custom .form-control:focus {
+.input-group-custom .form-control:focus,
+.input-group-custom .form-select:focus {
     border-color: var(--primary-red);
     box-shadow: 0 0 0 0.2rem rgba(211, 47, 47, 0.25);
     background: white;
@@ -256,11 +259,11 @@ footer {
     font-size: 0.9rem;
 }
 
-.input-group-custom .input-icon {
+.input-group-custom .form-control + .input-icon,
+.input-group-custom .form-select + .input-icon {
     position: absolute;
     right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1rem;
     color: #999;
     font-size: 1.1rem;
 }
@@ -353,12 +356,8 @@ footer {
 
 @media (min-width: 768px) {
     .register-form {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
-
-    .form-section-full {
-        grid-column: 1 / -1;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
