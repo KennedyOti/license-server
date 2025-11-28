@@ -6,7 +6,7 @@
 <!-- Dashboard Stats -->
 <div class="row">
     @if($role === 'owner')
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-12">
         <div class="dashboard-card companies-card">
             <div class="card-icon">
                 <i class="bi bi-building"></i>
@@ -15,7 +15,7 @@
             <div class="stat-label">Total Companies</div>
         </div>
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-12">
         <div class="dashboard-card users-card">
             <div class="card-icon">
                 <i class="bi bi-people"></i>
@@ -27,7 +27,7 @@
     @endif
 
     @if(in_array($role, ['admin', 'owner']))
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-12">
         <div class="dashboard-card products-card">
             <div class="card-icon">
                 <i class="bi bi-box-seam"></i>
@@ -38,7 +38,7 @@
     </div>
     @endif
 
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-12">
         <div class="dashboard-card licenses-card">
             <div class="card-icon">
                 <i class="bi bi-key"></i>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-12">
         <div class="dashboard-card active-licenses-card">
             <div class="card-icon">
                 <i class="bi bi-check-circle"></i>
@@ -59,7 +59,7 @@
     </div>
 
     @if($role === 'owner' && $company)
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-12">
         <div class="dashboard-card api-status-card">
             <div class="card-icon">
                 <i class="bi bi-shield-check"></i>
